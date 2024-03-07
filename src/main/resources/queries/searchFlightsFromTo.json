@@ -1,0 +1,50 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "bool": {
+            "must": [
+              {
+                "term": {
+                  "OriginCityName": {
+                    "value": "$fromCity"
+                  }
+                }
+              },
+              {
+                "term": {
+                  "DestCityName": {
+                    "value": "$toCity"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "bool": {
+            "must": [
+              {
+                "range": {
+                  "timestamp": {
+                    "gte": "$fromTimestamp"
+                  }
+                }
+              },
+              {
+                "range": {
+                  "timestamp": {
+                    "lte": "$toTimestamp"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "size": "$size",
+  "from": "$from"
+}

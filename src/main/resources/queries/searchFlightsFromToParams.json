@@ -1,0 +1,8 @@
+{
+  "size": 10,
+  "from": 0,
+  "fromCity": "Rome",
+  "toCity": "London",
+  "fromTimestamp": "2010-03-03T23:32:19.000+01:00",
+  "toTimestamp": "2025-03-03T23:32:19.000+01:00"
+}
